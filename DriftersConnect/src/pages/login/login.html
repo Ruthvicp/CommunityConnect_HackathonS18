@@ -7,5 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-
+  <div>
+    <h3>Login:</h3>
+    <div>
+      <label>Username:</label><br>
+      <ion-input type="text" id="txt_user" placeholder="Username or Email" [(ngModel)]="user"></ion-input>
+    </div>
+    <div>
+      <label>Password:</label><br>
+      <ion-input type="password" id="txt_password" placeholder="Password"[(ngModel)]="pass"></ion-input>
+    </div>
+    <div class="row">
+      <div class="col col-60">
+        <!--<input type="button" id="btn_login" value="Login" (click)="loginClick()"/>-->
+        <button ion-button (click)="loginClick()">Login</button>
+      </div>
+    </div>
+  </div>
 </ion-content>
