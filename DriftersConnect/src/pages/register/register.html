@@ -8,53 +8,55 @@
 
 <ion-content padding>
 
-     <form style="border: 20px solid #F1C40F">
+  <form>
   <div class="container">
     <h1>Create an account</h1>
-    <hr>
 
-    <label for="uname"><b>User Name : </b></label>
-    <input type="text" placeholder="Enter username" name="email" required>
-      <br>
-<label for="fname"><b>First Name : </b></label>
-    <input type="text" placeholder="Enter first name" name="email" required>
-      <br>
-      <label for="lname"><b>Last Name : </b></label>
-    <input type="text" placeholder="Enter last name" name="email" required>
-      <br>
-      
-      <label for="lname"><b>Address Line 1 : </b></label>
-    <input type="text" placeholder="Enter Address line 1" name="email" required>
-      <br>
-      
-      <label for="lname"><b>Address Line 2 : </b></label>
-    <input type="text" placeholder="Enter Address line 2" name="email" required>
-      <br>
-      
-      <label for="lname"><b>City : </b></label>
-    <input type="text" placeholder="Enter your city" name="email" required>
-      <br>
-      
-      <label for="lname"><b>ZipCode : </b></label>
-    <input type="text" placeholder="Enter ZipCode" name="email" required>
-      <br>
-    
-    
-    <label for="psw"><b>Password : </b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-      <br>
+    <div>
+      <ion-label for="username"><b>Username: </b></ion-label>
+      <ion-input type="text" placeholder="Enter username" name="username" required></ion-input>
+    </div>
+    <div>
+      <ion-label for="fname"><b>First Name: </b></ion-label>
+      <ion-input type="text" placeholder="Enter first name" name="fname" required></ion-input>
+    </div>
+    <div>
+      <ion-label for="lname"><b>Last Name: </b></ion-label>
+      <ion-input type="text" placeholder="Enter last name" name="lname" required></ion-input>
+    </div>
+    <div>
+      <ion-label for="address"><b>Address: </b></ion-label>
+      <ion-input type="text" placeholder="Enter address" name="address" required></ion-input>
+    </div>
+    <div>
+      <ion-label for="city"><b>City: </b></ion-label>
+      <ion-input type="text" placeholder="Enter city" name="city" required></ion-input>
+    </div>
+    <div>
+      <ion-label for="state"><b>State: </b></ion-label>
+      <ion-input type="text" placeholder="Enter state" name="state" required></ion-input>
+    </div>
+    <div>
+      <ion-label for="zip"><b>ZipCode: </b></ion-label>
+      <ion-input type="text" placeholder="Enter ZipCode" name="zip" required></ion-input>
+    </div>
+    <div>
+      <ion-label for="psw"><b>Password: </b></ion-label>
+      <ion-input type="password" placeholder="Enter Password" name="psw" required></ion-input>
+    </div>
+    <div>
+      <ion-label for="psw-repeat"><b>Confirm Password: </b></ion-label>
+      <ion-input type="password" placeholder="Confirm Password" name="psw-repeat" required></ion-input>
+    </div>
+    <div>
+      <ion-label>
+        <ion-input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me</ion-input>
+      </ion-label>
 
-    <label for="psw-repeat"><b>Confirm Password : </b></label>
-    <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
-    <br>
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    </div>
     <div class="clearfix">
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button ion-button type="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
 </form>
