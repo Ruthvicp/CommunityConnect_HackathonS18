@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { TabsPage } from '../tabs/tabs';
-import { HomePage } from '../home/home';
+import { Events } from 'ionic-angular';
 
 @Component({
   selector: 'page-login',
@@ -9,13 +8,13 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController) {
-  this.navCtrl = navCtrl;
-
+  constructor(public navCtrl: NavController, public events: Events) {
+    this.navCtrl = navCtrl;
+    this.events = events;
   }
-  
+
   goToHome() {
-  this.navCtrl.push(TabsPage);
+    this.events.publish('user:login', true, Date.now());
+    //this.navCtrl.push(HomePage);
   }
-
 }
