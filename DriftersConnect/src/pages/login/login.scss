@@ -1,3 +1,22 @@
 page-login {
+  .loginCenter {
+    width: 20%;
+    min-width: 200px;
+    margin: auto;
+  }
 
+  .inputData, .inputLabel {
+    padding: 0px;
+    margin: 0px;
+    width: 150px;
+    height: auto;
+  }
+
+  .inputButton {
+    padding: 0px;
+    margin: 0px;
+    width: 100px;
+    height: auto;
+    margin: auto;
+  }
 }
