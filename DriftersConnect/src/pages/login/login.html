@@ -7,18 +7,18 @@
 </ion-header>
 
 <ion-content padding>
-  <div>
+  <div class="loginCenter">
     <h3>Login:</h3>
     <div>
-      <ion-label>Username:</ion-label>
-      <ion-input type="text" id="txt_user" placeholder="Username or Email" [(ngModel)]="user"></ion-input>
+      <ion-label class="inputLabel">Username:</ion-label>
+      <ion-input class="inputData" type="text" id="txt_user" placeholder="Username or Email" [(ngModel)]="user"></ion-input>
     </div>
     <div>
-      <ion-label>Password:</ion-label>
-      <ion-input type="password" id="txt_password" placeholder="Password"[(ngModel)]="pass"></ion-input>
+      <ion-label class="inputLabel">Password:</ion-label>
+      <ion-input class="inputData" type="password" id="txt_password" placeholder="Password"[(ngModel)]="pass"></ion-input>
     </div>
-    <div class="row">
-      <div class="col col-60">
+    <div>
+      <div class="inputButton">
         <!--<input type="button" id="btn_login" value="Login" (click)="loginClick()"/>-->
         <button ion-button (click)="goToHome()">Login</button>
       </div>
