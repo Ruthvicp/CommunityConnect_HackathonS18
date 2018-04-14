@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {AlertController, NavController} from 'ionic-angular';
 import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
+import {HomePage} from "../home/home";
 
 
 @Component({
@@ -10,15 +11,25 @@ import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
 export class RegisterPage {
 
   username = "";
-psw ="";
+  psw ="";
 
-  constructor(private fire: AngularFireAuth, public navCtrl: NavController) {
+  constructor(private  alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController) {
 
+  }
+
+  alert(message: String){
+    this.alertCtrl.create({
+      title:'Info!',
+      subTitle:'message',
+      buttons: ['OK']
+    }).present();
   }
 
   registerUser(){
     this.fire.auth.createUserWithEmailAndPassword(this.username.valueOf(), this.psw.valueOf()).then(data =>{
       console.log("got data from Firebase : ", data);
+      this.alert("You are logged in !")
+      this.navCtrl.push(HomePage);
 
     }).catch(error =>{
       console.log("error in registeration : ", error);
