@@ -1,11 +1,35 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Maintenance and Recommendations
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <div class="aboutCenter">
+    <h3>Maintenance and Recommendations</h3>
+    <div class="spacer">
+      <div class="logoutButton">
+        <button ion-button color="tertiary" (click)="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="spacer">
+      <div class="listItem">
+        <h4>Maintenance Records:</h4>
+        <ion-item *ngFor="let maintItem of mainReports">
+          <!--{{newsItem.result.name}}-->
+        </ion-item>
+      </div>
+    </div>
+    <div class="spacer">
+      <div class="listItem">
+        <h4>Recommendations:</h4>
+        <ion-item *ngFor="let recommendItem of recommendations">
+          <!--{{newsItem.result.name}}-->
+        </ion-item>
+      </div>
+    </div>
+  </div>
 
 </ion-content>

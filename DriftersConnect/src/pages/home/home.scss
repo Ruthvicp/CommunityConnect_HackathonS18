@@ -1,3 +1,40 @@
 page-home {
+  .homeCenter {
+    width: 90%;
+    height: auto;
+    padding: 2px 2px 25px 2px;
+    min-width: 300px;
+    margin: auto;
+    border-radius: 20px;
+    background: #aeffff;
+  }
 
+  h3 {
+    margin: 15px 5px 5px 20px;
+    padding: 5px 0px 0px 0px;
+  }
+
+  .spacer {
+    margin: 2px auto;
+    width: auto;
+  }
+
+  .inputData, .inputLabel {
+    padding: 2px;
+    margin: 2px auto;
+    width: 150px;
+    height: auto;
+  }
+
+  .inputData {
+    border-bottom: #222222 solid 1px;
+  }
+
+  .text-input-md {
+    margin: 5px 5px;
+  }
+
+  .logoutButton {
+
+  }
 }
