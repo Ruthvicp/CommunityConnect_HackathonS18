@@ -30,5 +30,13 @@ export class MyApp {
         this.rootPage = TabsPage;
       }
     });
+
+    events.subscribe('user:logout', (user, time) => {
+      // user and time are the same arguments passed in `events.publish(user, time)
+      if(user)
+      {
+        this.rootPage = TabsLogin;
+      }
+    });
   }
 }

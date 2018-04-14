@@ -18,6 +18,11 @@
       <ion-input class="inputData" type="password" id="txt_password" placeholder="Password"[(ngModel)]="pass"></ion-input>
     </div>
     <div class="spacer">
+      <div class="checklabel">
+        <ion-label class="inputLabel" for="remember"><ion-checkbox name="remember"></ion-checkbox>Remember Me</ion-label>
+      </div>
+    </div>
+    <div class="spacer">
       <div class="inputButton">
         <!--<input type="button" id="btn_login" value="Login" (click)="loginClick()"/>-->
         <button ion-button color="secondary" (click)="goToHome()">Login</button>
