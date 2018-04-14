@@ -42,8 +42,8 @@
       <ion-input class="inputData" type="password" placeholder="Enter Password" [(ngModel)]="psw" required></ion-input>
     </div>
     <div class="spacer">
-      <ion-label class="inputLabel" for="psw-repeat"><b>Confirm Password: </b></ion-label>
-      <ion-input class="inputData" type="password" placeholder="Confirm Password" [(ngModel)]="psw-repeat" required></ion-input>
+      <ion-label class="inputLabel" for="pswConfirm"><b>Confirm Password: </b></ion-label>
+      <ion-input class="inputData" type="password" placeholder="Confirm Password" [(ngModel)]="pswConfirm" required></ion-input>
     </div>
     <div class="spacer">
       <div class="checklabel">
@@ -52,7 +52,7 @@
       <p>By creating an account you agree to our <a href="#">Terms & Privacy Policy</a>.</p>
     </div>
     <div class="inputButton">
-      <button ion-button color="secondary" (click)="register()">Sign Up</button>
+      <button ion-button color="secondary" (click)="registerUser()">Sign Up</button>
     </div>
   </div>
 </ion-content>
