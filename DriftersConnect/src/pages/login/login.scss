@@ -3,20 +3,39 @@ page-login {
     width: 20%;
     min-width: 200px;
     margin: auto;
+    border-radius: 20px;
+    background: #aeffff;
+  }
+
+  h3 {
+    margin: 15px 5px 5px 20px;
+    padding: 5px 0px 0px 0px;
+  }
+
+  .spacer {
+    margin: 2px auto;
+    width: auto;
   }
 
   .inputData, .inputLabel {
-    padding: 0px;
-    margin: 0px;
+    padding: 2px;
+    margin: 2px auto;
     width: 150px;
     height: auto;
   }
 
+  .inputData {
+    border-bottom: #222222 solid 1px;
+  }
+
+  .text-input-md {
+    margin: 5px 5px;
+  }
+
   .inputButton {
-    padding: 0px;
-    margin: 0px;
+    padding: 2px;
     width: 100px;
     height: auto;
-    margin: auto;
+    margin: 5px auto;
   }
 }
