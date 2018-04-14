@@ -15,6 +15,20 @@ import { TabsLogin} from '../pages/tabs_login/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFireAuthModule} from "angularfire2/auth";
+import {AngularFireModule} from "angularfire2";
+
+
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyAGM01zd1YqnsOvUZ8iru_fT27uIRPhb5c",
+  authDomain: "driftersconnect.firebaseapp.com",
+  databaseURL: "https://driftersconnect.firebaseio.com",
+  projectId: "driftersconnect",
+  storageBucket: "driftersconnect.appspot.com",
+  messagingSenderId: "731019140792"
+};
+
 
 @NgModule({
   declarations: [
@@ -29,7 +43,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
