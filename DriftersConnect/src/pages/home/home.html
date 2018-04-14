@@ -12,7 +12,7 @@
         <button ion-button color="tertiary" (click)="logout()">Logout</button>
       </div>
     </div>
-      
+
       <!DOCTYPE html>
 <html>
 <head>
@@ -65,14 +65,14 @@
     </div>
     <div id="output"></div>
 </div>
-<div id="map"></div>
+<div #map id="map"></div>
 <script>
 
 function initMap() {
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
 
-        
+
         var destination = ["5430 Harrison Street, Kansas City, MO","5411 Charlotte Street, Kansas City, MO","3421 Armour Road, North Kansas City, MO","227 Nichols Rd, Kansas City, MO 64112",
          "1320 E 49th St, Kansas City, MO 64110"];
 
@@ -263,13 +263,10 @@ function initMap() {
 
 
 </script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClH87xdu9pX13BNKQIElkBk7H4clRDOGM&callback=initMap">
-
-</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClH87xdu9pX13BNKQIElkBk7H4clRDOGM&callback=initMap"></script>
 </body>
 </html>
-      
+
     <div class="spacer">
       <div class="listItem">
         <h4>Alarms:</h4>
@@ -298,6 +295,6 @@ function initMap() {
 
     </div>
   </div>
-    
-    
+
+
 </ion-content>
