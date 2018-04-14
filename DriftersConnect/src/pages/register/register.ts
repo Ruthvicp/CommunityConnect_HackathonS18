@@ -3,6 +3,10 @@ import {AlertController, NavController} from 'ionic-angular';
 import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
 import {LoginPage} from "../login/login";
 
+import { AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
+import {AngularFireModule} from "angularfire2";
+import {FirebaseListObservable} from "angularfire2/database-deprecated";
+
 
 @Component({
   selector: 'page-register',
@@ -18,8 +22,10 @@ export class RegisterPage {
   zip = "";
   pswConfirm = "";
 
-  constructor(private  alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController) {
+  user = {};
 
+  constructor(private  alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public fireDatabase: AngularFireDatabase) {
+    //this.fireDatabase.list('Users').push(this.user);
   }
 
   alert(message: string){
@@ -36,9 +42,16 @@ export class RegisterPage {
     {
       if(this.pswConfirm.valueOf() == this.psw.valueOf())
       {
+        this.user = {
+          fname: this.fname,
+          lname: this.lname,
+          address: this.address,
+          zip: this.zip
+        };
         this.fire.auth.createUserWithEmailAndPassword(this.username.valueOf(), this.psw.valueOf()).then(data =>{
+          this.fireDatabase.list('Users').push(this.user);
           console.log("Got data from Firebase: ", data);
-          this.alert("You are logged in!")
+          this.alert("You are Registered in, You may log in now!")
           this.navCtrl.setRoot(LoginPage);
 
         }).catch(error =>{

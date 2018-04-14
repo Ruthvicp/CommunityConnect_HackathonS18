@@ -40,7 +40,7 @@ export class MyApp {
       }
     });
 
-    const unsubscribe = fire.auth.onAuthStateChanged(user => {
+    /*const unsubscribe = fire.auth.onAuthStateChanged(user => {
       if (!user) {
         //this.rootPage = 'LoginPage';
         this.rootPage = 'TabsLogin';
@@ -49,6 +49,6 @@ export class MyApp {
         this.rootPage = TabsPage;
         unsubscribe();
       }
-    });
+    });*/
   }
 }

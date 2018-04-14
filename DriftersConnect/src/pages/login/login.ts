@@ -25,25 +25,31 @@ export class LoginPage {
     //this.navCtrl.push(HomePage);
   }
 
-  alert(message: String){
+  alert(message: string){
     this.alertCtrl.create({
       title:'Info!',
-      subTitle:'Logged In!',
+      subTitle:message,
       buttons: ['OK']
     }).present();
   }
 
-  signinUser(){
-    this.fire.auth.signInWithEmailAndPassword(this.user.valueOf(), this.pass.valueOf()).then(data =>{
-      console.log("got data from Firebase ", data);
-      this.alert("You are logged in !")
-      this.navCtrl.push(HomePage);
+  signinUser() {
+    if (this.user.valueOf() != "" && this.pass.valueOf() != "") {
+      this.fire.auth.signInWithEmailAndPassword(this.user.valueOf(), this.pass.valueOf()).then(data => {
+        console.log("got data from Firebase ", data);
+        this.alert("You are logged in !")
+        this.navCtrl.push(HomePage);
 
-    }).catch(error =>{
-      console.log("error in registeration : ", error);
-      this.alert(error.message);
-    });
+      }).catch(error => {
+        console.log("error in registeration : ", error);
+        this.alert(error.message);
+      });
 
-    console.log("will register using credentials : username is "+ this.user +" and psw is "+this.pass )
+      console.log("will register using credentials : username is " + this.user + " and psw is " + this.pass)
+    }
+    else
+    {
+      this.alert("Please fill out all details!")
+    }
   }
 }
