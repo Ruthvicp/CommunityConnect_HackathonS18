@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsLogin} from '../pages/tabs_login/tabs';
 import { Events } from 'ionic-angular';
 import {TabsPage} from "../pages/tabs/tabs";
+import {AngularFireAuth} from "angularfire2/auth";
 
 @Component({
   templateUrl: 'app.html'
@@ -13,7 +14,7 @@ import {TabsPage} from "../pages/tabs/tabs";
 export class MyApp {
   rootPage:any = TabsLogin;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, events: Events) {
+  constructor(private fire: AngularFireAuth,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, events: Events) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -36,6 +37,17 @@ export class MyApp {
       if(user)
       {
         this.rootPage = TabsLogin;
+      }
+    });
+
+    const unsubscribe = fire.auth.onAuthStateChanged(user => {
+      if (!user) {
+        //this.rootPage = 'LoginPage';
+        this.rootPage = 'TabsLogin';
+        unsubscribe();
+      } else {
+        this.rootPage = TabsPage;
+        unsubscribe();
       }
     });
   }

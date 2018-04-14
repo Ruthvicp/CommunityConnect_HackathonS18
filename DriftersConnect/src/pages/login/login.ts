@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Events } from 'ionic-angular';
 import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
+import { AngularFireDatabaseModule} from "angularfire2/database";
 import {isSuccess} from "@angular/http/src/http_utils";
 import {HomePage} from "../home/home";
 
@@ -14,7 +15,7 @@ export class LoginPage {
   user ="";
   pass ="";
 
-  constructor(private  alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public events: Events) {
+  constructor(private fireDatabase: AngularFireDatabaseModule, private alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public events: Events) {
     this.navCtrl = navCtrl;
     this.events = events;
   }
@@ -27,7 +28,7 @@ export class LoginPage {
   alert(message: String){
     this.alertCtrl.create({
       title:'Info!',
-      subTitle:'message',
+      subTitle:'Logged In!',
       buttons: ['OK']
     }).present();
   }
