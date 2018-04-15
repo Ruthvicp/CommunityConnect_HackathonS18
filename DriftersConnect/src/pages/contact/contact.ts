@@ -19,21 +19,21 @@ ref = firebase.database().ref('chatrooms/');
   constructor(public navCtrl: NavController, public events: Events, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public navParams: NavParams) {
     this.navCtrl = navCtrl;
     this.events = events;
-    
+
      this.ref.on('value', resp => {
     this.rooms = [];
     this.rooms = snapshotToArray(resp);
   });
-    
+
  /*   platform.ready().then(() => {
     // Okay, so the platform is ready and our plugins are available.
     // Here you can do any higher level native things you might need.
     statusBar.styleDefault();
     splashScreen.hide();
   }); */
-  //firebase.initializeApp(config);   
+  //firebase.initializeApp(config);
   }
-  
+
   addRoom() {
   this.navCtrl.push(AddRoomPage);
 }
@@ -44,13 +44,11 @@ joinRoom(key) {
     nickname:this.navParams.get("nickname")
   });
 }
-  
- 
+
   logout() {
     this.events.publish('user:logout', true, Date.now());
   }
 }
-
 
 export const snapshotToArray = snapshot => {
     let returnArr = [];
