@@ -26,25 +26,34 @@
     <div class="spacer">
       <div class="listItem">
         <h4>Alarms:</h4>
-        <ion-item *ngFor="let alarmItem of alarms">
+        <ion-item *ngIf="showA" *ngFor="let alarmItem of alarms">
           <!--{{newsItem.result.name}}-->
         </ion-item>
+      </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
       </div>
     </div>
     <div class="spacer">
       <div class="listItem">
         <h4>News:</h4>
-        <ion-item *ngFor="let newsItem of news">
+        <ion-item *ngIf="showN" *ngFor="let newsItem of news">
           <!--{{newsItem.result.name}}-->
         </ion-item>
+      </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showN = !showN">Show/Hide News</button>
       </div>
     </div>
     <div class="spacer">
       <div class="listItem">
         <h4>Requests:</h4>
-        <ion-item *ngFor="let requestItem of requests">
+        <ion-item *ngIf="showR" *ngFor="let requestItem of requests">
           <!--{{newsItem.result.name}}-->
         </ion-item>
+      </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showR = !showR">Show/Hide Requests</button>
       </div>
     </div>
     <div class="spacer">
