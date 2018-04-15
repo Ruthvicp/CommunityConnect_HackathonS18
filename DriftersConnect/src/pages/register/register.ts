@@ -24,7 +24,8 @@ export class RegisterPage {
 
   user = {};
 
-  constructor(private  alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public fireDatabase: AngularFireDatabase) {
+  constructor(private  alertCtrl:AlertController,private fire: AngularFireAuth,
+              public navCtrl: NavController, public fireDatabase: AngularFireDatabase) {
     //this.fireDatabase.list('Users').push(this.user);
   }
 
