@@ -26,9 +26,11 @@
     <div class="spacer">
       <div class="listItem">
         <h4>Alarms:</h4>
-        <ion-item *ngIf="showA" *ngFor="let alarmItem of alarms">
-          <!--{{newsItem.result.name}}-->
-        </ion-item>
+        <div *ngIf="showA" >
+          <ion-item *ngFor="let alarmItem of alarms">
+            <!--{{newsItem.result.name}}-->
+          </ion-item>
+        </div>
       </div>
       <div class="inputButton">
         <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
@@ -37,9 +39,11 @@
     <div class="spacer">
       <div class="listItem">
         <h4>News:</h4>
-        <ion-item *ngIf="showN" *ngFor="let newsItem of news">
-          <!--{{newsItem.result.name}}-->
-        </ion-item>
+        <div *ngIf="showN">
+          <ion-item *ngFor="let newsItem of news">
+            <!--{{newsItem.result.name}}-->
+          </ion-item>
+        </div>
       </div>
       <div class="inputButton">
         <button ion-button color="secondary" (click)="showN = !showN">Show/Hide News</button>
@@ -48,9 +52,11 @@
     <div class="spacer">
       <div class="listItem">
         <h4>Requests:</h4>
-        <ion-item *ngIf="showR" *ngFor="let requestItem of requests">
-          <!--{{newsItem.result.name}}-->
-        </ion-item>
+        <div *ngIf="showR">
+          <ion-item *ngFor="let requestItem of requests">
+            <!--{{newsItem.result.name}}-->
+          </ion-item>
+        </div>
       </div>
       <div class="inputButton">
         <button ion-button color="secondary" (click)="showR = !showR">Show/Hide Requests</button>
@@ -72,13 +78,10 @@
           <button ion-button color="secondary" (click)="postMess()">Post Message</button>
         </div>
       </div>
-
     </div>
     <div class="inputButton">
       <!--<input type="button" id="btn_login" value="Login" (click)="loginClick()"/>-->
       <button ion-button color="secondary" (click)="displayUserDetails()">getUserDetails</button>
     </div>
   </div>
-
-
 </ion-content>
