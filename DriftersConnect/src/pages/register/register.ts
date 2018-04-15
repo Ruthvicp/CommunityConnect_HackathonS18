@@ -43,6 +43,7 @@ export class RegisterPage {
       if(this.pswConfirm.valueOf() == this.psw.valueOf())
       {
         this.user = {
+          user:this.username,
           fname: this.fname,
           lname: this.lname,
           address: this.address,
@@ -50,6 +51,8 @@ export class RegisterPage {
         };
         this.fire.auth.createUserWithEmailAndPassword(this.username.valueOf(), this.psw.valueOf()).then(data =>{
           this.fireDatabase.list('Users').push(this.user);
+          //this.fireDatabase.list('Users');
+
           console.log("Got data from Firebase: ", data);
           this.alert("You are Registered in, You may log in now!")
           this.navCtrl.setRoot(LoginPage);

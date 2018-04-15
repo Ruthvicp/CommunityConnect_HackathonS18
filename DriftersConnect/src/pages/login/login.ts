@@ -5,6 +5,7 @@ import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
 import { AngularFireDatabaseModule} from "angularfire2/database";
 import {isSuccess} from "@angular/http/src/http_utils";
 import {HomePage} from "../home/home";
+import {Storage} from "@ionic/storage";
 
 @Component({
   selector: 'page-login',
@@ -15,10 +16,11 @@ export class LoginPage {
   user ="";
   pass ="";
 
-  constructor(private fireDatabase: AngularFireDatabaseModule, private alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public events: Events) {
+  constructor(private ionStorage:Storage, private fireDatabase: AngularFireDatabaseModule, private alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public events: Events) {
     this.navCtrl = navCtrl;
     this.events = events;
   }
+
 
   goToHome() {
     this.events.publish('user:login', true, Date.now());
@@ -37,7 +39,8 @@ export class LoginPage {
     if (this.user.valueOf() != "" && this.pass.valueOf() != "") {
       this.fire.auth.signInWithEmailAndPassword(this.user.valueOf(), this.pass.valueOf()).then(data => {
         console.log("got data from Firebase ", data);
-        this.alert("You are logged in !")
+        //this.alert("You are logged in !");
+        this.ionStorage.set('userName',this.user.valueOf());
         this.navCtrl.push(HomePage);
 
       }).catch(error => {
