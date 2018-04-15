@@ -48,7 +48,8 @@
       </div>
     </div>
     <div class="spacer">
-      <h4>Post:</h4>
+      <ion-label class="inputLabel">Post:</ion-label>
+      <ion-input class="inputData" type="text" placeholder="Post Message" [(ngModel)]="pMess"></ion-input>
       <ion-item>
         <ion-label>Post Type:</ion-label>
         <ion-select [(ngModel)]="postType">

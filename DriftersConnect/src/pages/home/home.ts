@@ -14,6 +14,7 @@ export class HomePage {
   map: any;
   user = "";
   postType: any;
+  pMess: "";
   usersList:Array<any>;
   userRef = firebase.database().ref("Users/").orderByKey();
 
