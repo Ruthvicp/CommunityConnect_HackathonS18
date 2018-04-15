@@ -2,6 +2,7 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import {AlertController, Events, NavController, Platform} from 'ionic-angular';
 import {Storage} from "@ionic/storage";
 import firebase from 'firebase';
+import {Observable} from "rxjs/Observable";
 
 declare var google: any;
 
@@ -15,15 +16,17 @@ export class HomePage {
   user = "";
   postType: any;
   pMess: "";
-  usersList:Array<any>;
+  usersList: any[] = [];
   userRef = firebase.database().ref("Users/").orderByKey();
 
   constructor(private alertCtrl:AlertController, private ionStorage:Storage, public navCtrl: NavController, public  events:Events, public platform:Platform){
     this.navCtrl = navCtrl;
     this.events = events;
+    console.log(this.usersList);
 
     ionStorage.get("userName").then((val) => {
       this.user = val;
+      //this.usersList = [];
       //var s = this.user;
 
       //console.log("the user logged in is "+ s);
@@ -51,12 +54,15 @@ export class HomePage {
     {
       alert(this.postType);
     }
+
+    console.log(this.usersList);
   }
 
   displayUserDetails(){
+    var that = this;
     //console.log("Inside displayUserDetails func of home.ts");
     this.userRef.on('child_added', function(data) {
-      console.log(data.val().fname, data.val().lname);
+      that.usersList.push(data.val());
     });
   }
 
