@@ -23,7 +23,11 @@ export class HomePage {
   pMess: "";
   usersList: any[] = [];
   newsMessage: {};
+  alarms: any[] = [];
+  requests: any[] = [];
+  news: any[] = [];
   userRef = firebase.database().ref("Users/").orderByKey();
+<<<<<<< HEAD
   
   ionViewDidLoad() {
   this.showMap();
@@ -47,17 +51,23 @@ addMarker(position,map){
 return new google.maps.Marker({
 position,map});
 }
+=======
+  alarmRef = firebase.database().ref("Alarms/").orderByKey();
+  reqRef = firebase.database().ref("userRequests/").orderByKey();
+  newsRef = firebase.database().ref("News/").orderByKey();
+>>>>>>> 8f1a6e703e66cda3db26f8c69df7248230d643d6
 
   data = { nickname:"" };
-
-
+  //constructor to initialize the objects
   constructor(private alertCtrl:AlertController, private ionStorage:Storage, public navCtrl: NavController,
               public  events:Events, public platform:Platform, public fireDatabase: AngularFireDatabase){
 
     this.navCtrl = navCtrl;
     this.events = events;
     console.log(this.usersList);
-
+    this.setAlarmDisplay();
+    this.setUserNewsDisplay();
+    this.setUserRequestsDisplay();
     ionStorage.get("userName").then((val) => {
       this.user = val;
       //this.usersList = [];
@@ -80,11 +90,12 @@ position,map});
     }).present();
   }
 
+  //func to post the user typed messages
   postMess() {
     if (this.postType != null) {
       this.newsMessage = {
         user: this.user,
-        newsUpdate: this.pMess
+        update: this.pMess
       };
       /*
       if (this.postType == "mess") {
@@ -110,18 +121,21 @@ position,map});
           this.fireDatabase.list('News').push(this.newsMessage);
           console.log("Saved your News/Updates to Firebase!");
           alert(this.postType);
+          this.setUserNewsDisplay();
           break;
         }
         case "requ":{
           this.fireDatabase.list('userRequests').push(this.newsMessage);
           console.log("Saved user Requests to Firebase!");
           alert(this.postType);
+          this.setUserRequestsDisplay();
           break;
         }
         case "alar":{
           this.fireDatabase.list('Alarms').push(this.newsMessage);
           console.log("Saved Alarms to Firebase!");
           alert(this.postType);
+          this.setAlarmDisplay();
           break;
         }
         default:{
@@ -134,7 +148,41 @@ position,map});
     }
   }
 
-  displayUserDetails(){
+  //Displays the user entered news updates
+  setUserNewsDisplay(){
+    this.news = [];
+    console.log("Inside Setting News update");
+    var that = this;
+    this.newsRef.on('child_added', function(data) {
+      that.news.push(data.val().update);
+      console.log("Setting news Updates to - "+data.val().update);
+    });
+  }
+
+  //Displays the user entered requests
+  setUserRequestsDisplay(){
+    this.requests = [];
+    console.log("Inside Setting user requests");
+    var that = this;
+    this.reqRef.on('child_added', function(data) {
+      that.requests.push(data.val().update);
+      console.log("Setting user requests to - "+data.val().update);
+    });
+  }
+
+  //Displays the user entered Alarms
+  setAlarmDisplay(){
+    this.alarms = [];
+    console.log("Inside Setting Alarms");
+    var that = this;
+    this.alarmRef.on('child_added', function(data) {
+      that.alarms.push(data.val().update);
+      console.log("Setting Alarms to - "+data.val().update);
+    });
+  }
+
+  //Displays the user details
+   displayUserDetails(){
     var that = this;
     //console.log("Inside displayUserDetails func of home.ts");
     this.userRef.on('child_added', function(data) {
@@ -142,11 +190,24 @@ position,map});
     });
   }
 
+<<<<<<< HEAD
  
+=======
+  //initializes the map
+  initMap() {
+    this.map = new google.maps.Map(this.mapElement.nativeElement, {
+      zoom: 7,
+      center: {lat: 41.85, lng: -87.65}
+    });
+  }
+
+
+  //logs user out
+>>>>>>> 8f1a6e703e66cda3db26f8c69df7248230d643d6
   logout() {
     this.events.publish('user:logout', true, Date.now());
   }
-  
+
   enterNickname() {
   this.navCtrl.setRoot(ContactPage, {
     nickname: this.data.nickname
