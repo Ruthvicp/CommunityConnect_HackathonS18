@@ -19,15 +19,44 @@ page-home {
     width: auto;
   }
 
+  .listItem {
+    margin: 10px 20px;
+  }
+
   .inputData, .inputLabel {
     padding: 2px;
-    margin: 2px auto;
+    margin: 2px 20px;
     width: 150px;
     height: auto;
   }
 
+  .postData {
+    width: 90%;
+    margin: 2px auto;
+  }
+
+  .inputItem {
+    padding: 2px;
+    margin: 10px 20px;
+    width: 250px;
+    height: auto;
+    float: left;
+  }
+
   .inputData {
     border-bottom: #222222 solid 1px;
+  }
+
+  .inputButton {
+    padding: 2px;
+    height: auto;
+    margin: 5px;
+    display: inline-block;
+  }
+  .inputCenter {
+    margin: 5px auto;
+    width: fit-content;
+    align-items: center;
   }
 
   .text-input-md {
@@ -35,7 +64,8 @@ page-home {
   }
 
   .logoutButton {
-
+    float:right;
+    margin: 5px 10px;
   }
 
   /*#right-panel {
