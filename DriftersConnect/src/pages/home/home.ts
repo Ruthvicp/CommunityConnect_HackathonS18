@@ -3,6 +3,7 @@ import {AlertController, Events, NavController, Platform} from 'ionic-angular';
 import {Storage} from "@ionic/storage";
 import firebase from 'firebase';
 import {Observable} from "rxjs/Observable";
+import { AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
 
 declare var google: any;
 
@@ -14,12 +15,14 @@ export class HomePage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   user = "";
-  postType: any;
+  postType: any ="";
   pMess: "";
   usersList: any[] = [];
+  newsMessage: {};
   userRef = firebase.database().ref("Users/").orderByKey();
 
-  constructor(private alertCtrl:AlertController, private ionStorage:Storage, public navCtrl: NavController, public  events:Events, public platform:Platform){
+  constructor(private alertCtrl:AlertController, private ionStorage:Storage, public navCtrl: NavController,
+              public  events:Events, public platform:Platform, public fireDatabase: AngularFireDatabase){
     this.navCtrl = navCtrl;
     this.events = events;
     console.log(this.usersList);
@@ -49,13 +52,58 @@ export class HomePage {
     }).present();
   }
 
-  postMess(){
-    if(this.postType != null)
-    {
-      alert(this.postType);
-    }
+  postMess() {
+    if (this.postType != null) {
+      this.newsMessage = {
+        user: this.user,
+        newsUpdate: this.pMess
+      };
+      /*
+      if (this.postType == "mess") {
+        this.fireDatabase.list('News').push(this.newsMessage);
+        console.log("Saved your News/Updates to Firebase!");
+      }
+      else if (this.postType == "requ") {
+        this.fireDatabase.list('userRequests').push(this.newsMessage);
+        console.log("Saved user Requests to Firebase!");
+        alert(this.postType);
+      }
+      else if (this.postType == "alar") {
+        this.fireDatabase.list('Alarms').push(this.newsMessage);
+        console.log("Saved Alarms to Firebase!");
+        alert(this.postType);
+      }else {
+        console.log("Select one of the types to post");
+        alert("Select one of the types to post");
+      } */
 
-    console.log(this.usersList);
+      switch (this.postType){
+        case "mess":{
+          this.fireDatabase.list('News').push(this.newsMessage);
+          console.log("Saved your News/Updates to Firebase!");
+          alert(this.postType);
+          break;
+        }
+        case "requ":{
+          this.fireDatabase.list('userRequests').push(this.newsMessage);
+          console.log("Saved user Requests to Firebase!");
+          alert(this.postType);
+          break;
+        }
+        case "alar":{
+          this.fireDatabase.list('Alarms').push(this.newsMessage);
+          console.log("Saved Alarms to Firebase!");
+          alert(this.postType);
+          break;
+        }
+        default:{
+          console.log("Kindly select one of the types to post");
+          alert("Select one of the types to post");
+          break;
+        }
+      }
+      // console.log(this.usersList);
+    }
   }
 
   displayUserDetails(){
