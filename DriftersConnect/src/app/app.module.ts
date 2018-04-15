@@ -5,6 +5,8 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+import { ChatPage } from '../pages/chat/chat';
+import { AddRoomPage } from '../pages/add-room/add-room';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -38,6 +40,8 @@ const firebaseConfig = {
     ContactPage,
     HomePage,
     TabsPage,
+    ChatPage,
+    AddRoomPage,
     LoginPage,
     RegisterPage,
     TabsLogin
@@ -56,6 +60,8 @@ const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
+    ChatPage,
+    AddRoomPage,
     TabsPage,
     LoginPage,
     RegisterPage,

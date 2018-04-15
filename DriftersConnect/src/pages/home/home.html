@@ -26,40 +26,57 @@
     <div class="spacer">
       <div class="listItem">
         <h4>Alarms:</h4>
-        <ion-item *ngFor="let alarmItem of alarms">
-          {{alarmItem}}
-        </ion-item>
+        <div *ngIf="showA" >
+          <ion-item *ngFor="let alarmItem of alarms">
+            {{alarmItem}}
+          </ion-item>
+        </div>
+      </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
       </div>
     </div>
     <div class="spacer">
       <div class="listItem">
         <h4>News:</h4>
-        <ion-item *ngFor="let newsItem of news">
-          {{newsItem}}
-        </ion-item>
+        <div *ngIf="showN">
+          <ion-item *ngFor="let newsItem of news">
+            {{newsItem}}
+          </ion-item>
+        </div>
+      </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showN = !showN">Show/Hide News</button>
       </div>
     </div>
     <div class="spacer">
       <div class="listItem">
         <h4>Requests:</h4>
-        <ion-item *ngFor="let requestItem of requests">
-          {{requestItem}}
-        </ion-item>
+        <div *ngIf="showR">
+          <ion-item *ngFor="let requestItem of requests">
+            {{requestItem}}
+          </ion-item>
+        </div>
+      </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showR = !showR">Show/Hide Requests</button>
       </div>
     </div>
     <div class="spacer">
-      <ion-label class="inputLabel">Post:</ion-label>
-      <ion-input class="inputData" type="text" placeholder="Post Message" [(ngModel)]="pMess"></ion-input>
-      <ion-item>
-        <ion-label>Post Type:</ion-label>
-        <ion-select [(ngModel)]="postType">
-          <ion-option value="mess">Message</ion-option>
-          <ion-option value="requ">Request</ion-option>
-          <ion-option value="alar">Alarm</ion-option>
-        </ion-select>
-      </ion-item>
-      <div class="inputButton">
-        <button ion-button color="secondary" (click)="postMess()">Post Message</button>
+      <ion-label class="inputLabel"><h4>Post:</h4></ion-label>
+      <ion-input class="inputData postData" type="text" placeholder="Post Message" [(ngModel)]="pMess"></ion-input>
+      <div class="inputCenter">
+        <ion-item class="inputItem">
+          <ion-label>Post Type:</ion-label>
+          <ion-select [(ngModel)]="postType">
+            <ion-option value="mess">Message</ion-option>
+            <ion-option value="requ">Request</ion-option>
+            <ion-option value="alar">Alarm</ion-option>
+          </ion-select>
+        </ion-item>
+        <div class="inputButton">
+          <button ion-button color="secondary" (click)="postMess()">Post Message</button>
+        </div>
       </div>
     </div>
     <div class="inputButton">
@@ -68,5 +85,17 @@
     </div>
   </div>
 
+    <!-- chat app -->
 
+     <form (ngSubmit)="enterNickname()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Enter your Nickname</ion-label>
+        <ion-input type="text" [(ngModel)]="data.nickname" name="nickname" required=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button full round color="secondary" type="submit">Enter</button>
+      </ion-item>
+    </ion-list>
+  </form>
 </ion-content>

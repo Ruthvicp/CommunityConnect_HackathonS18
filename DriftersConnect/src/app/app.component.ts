@@ -7,6 +7,17 @@ import { TabsLogin} from '../pages/tabs_login/tabs';
 import { Events } from 'ionic-angular';
 import {TabsPage} from "../pages/tabs/tabs";
 import {AngularFireAuth} from "angularfire2/auth";
+import * as firebase from 'firebase';
+
+/*const config = {
+  apiKey: "AIzaSyAGM01zd1YqnsOvUZ8iru_fT27uIRPhb5c",
+  authDomain: "driftersconnect.firebaseapp.com",
+  databaseURL: "https://driftersconnect.firebaseio.com",
+  projectId: "driftersconnect",
+  storageBucket: "driftersconnect.appspot.com",
+  messagingSenderId: "731019140792"
+};
+*/
 
 @Component({
   templateUrl: 'app.html'
@@ -50,5 +61,7 @@ export class MyApp {
         unsubscribe();
       }
     });*/
+    
+      //firebase.initializeApp(config);
   }
 }
