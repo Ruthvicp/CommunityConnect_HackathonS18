@@ -13,7 +13,8 @@ export class LoginPage {
   user ="";
   pass ="";
 
-  constructor(private ionStorage:Storage, private alertCtrl:AlertController,private fire: AngularFireAuth, public navCtrl: NavController, public events: Events) {
+  constructor(private ionStorage:Storage, private alertCtrl:AlertController,
+              private fire: AngularFireAuth, public navCtrl: NavController, public events: Events) {
     this.navCtrl = navCtrl;
     this.events = events;
   }

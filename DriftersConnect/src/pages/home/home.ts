@@ -19,14 +19,23 @@ export class HomePage {
   pMess: "";
   usersList: any[] = [];
   newsMessage: {};
+  alarms: any[] = [];
+  requests: any[] = [];
+  news: any[] = [];
   userRef = firebase.database().ref("Users/").orderByKey();
+  alarmRef = firebase.database().ref("Alarms/").orderByKey();
+  reqRef = firebase.database().ref("userRequests/").orderByKey();
+  newsRef = firebase.database().ref("News/").orderByKey();
 
+  //constructor to initialize the objects
   constructor(private alertCtrl:AlertController, private ionStorage:Storage, public navCtrl: NavController,
               public  events:Events, public platform:Platform, public fireDatabase: AngularFireDatabase){
     this.navCtrl = navCtrl;
     this.events = events;
     console.log(this.usersList);
-
+    this.setAlarmDisplay();
+    this.setUserNewsDisplay();
+    this.setUserRequestsDisplay();
     ionStorage.get("userName").then((val) => {
       this.user = val;
       //this.usersList = [];
@@ -52,11 +61,12 @@ export class HomePage {
     }).present();
   }
 
+  //func to post the user typed messages
   postMess() {
     if (this.postType != null) {
       this.newsMessage = {
         user: this.user,
-        newsUpdate: this.pMess
+        update: this.pMess
       };
       /*
       if (this.postType == "mess") {
@@ -82,18 +92,21 @@ export class HomePage {
           this.fireDatabase.list('News').push(this.newsMessage);
           console.log("Saved your News/Updates to Firebase!");
           alert(this.postType);
+          this.setUserNewsDisplay();
           break;
         }
         case "requ":{
           this.fireDatabase.list('userRequests').push(this.newsMessage);
           console.log("Saved user Requests to Firebase!");
           alert(this.postType);
+          this.setUserRequestsDisplay();
           break;
         }
         case "alar":{
           this.fireDatabase.list('Alarms').push(this.newsMessage);
           console.log("Saved Alarms to Firebase!");
           alert(this.postType);
+          this.setAlarmDisplay();
           break;
         }
         default:{
@@ -106,7 +119,41 @@ export class HomePage {
     }
   }
 
-  displayUserDetails(){
+  //Displays the user entered news updates
+  setUserNewsDisplay(){
+    this.news = [];
+    console.log("Inside Setting News update");
+    var that = this;
+    this.newsRef.on('child_added', function(data) {
+      that.news.push(data.val().update);
+      console.log("Setting news Updates to - "+data.val().update);
+    });
+  }
+
+  //Displays the user entered requests
+  setUserRequestsDisplay(){
+    this.requests = [];
+    console.log("Inside Setting user requests");
+    var that = this;
+    this.reqRef.on('child_added', function(data) {
+      that.requests.push(data.val().update);
+      console.log("Setting user requests to - "+data.val().update);
+    });
+  }
+
+  //Displays the user entered Alarms
+  setAlarmDisplay(){
+    this.alarms = [];
+    console.log("Inside Setting Alarms");
+    var that = this;
+    this.alarmRef.on('child_added', function(data) {
+      that.alarms.push(data.val().update);
+      console.log("Setting Alarms to - "+data.val().update);
+    });
+  }
+
+  //Displays the user details
+   displayUserDetails(){
     var that = this;
     //console.log("Inside displayUserDetails func of home.ts");
     this.userRef.on('child_added', function(data) {
@@ -114,6 +161,7 @@ export class HomePage {
     });
   }
 
+  //initializes the map
   initMap() {
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
       zoom: 7,
@@ -121,6 +169,8 @@ export class HomePage {
     });
   }
 
+
+  //logs user out
   logout() {
     this.events.publish('user:logout', true, Date.now());
   }
