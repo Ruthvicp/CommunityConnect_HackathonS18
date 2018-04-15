@@ -27,7 +27,6 @@ export class HomePage {
   requests: any[] = [];
   news: any[] = [];
   userRef = firebase.database().ref("Users/").orderByKey();
-<<<<<<< HEAD
   
   ionViewDidLoad() {
   this.showMap();
@@ -51,11 +50,11 @@ addMarker(position,map){
 return new google.maps.Marker({
 position,map});
 }
-=======
+
   alarmRef = firebase.database().ref("Alarms/").orderByKey();
   reqRef = firebase.database().ref("userRequests/").orderByKey();
   newsRef = firebase.database().ref("News/").orderByKey();
->>>>>>> 8f1a6e703e66cda3db26f8c69df7248230d643d6
+
 
   data = { nickname:"" };
   //constructor to initialize the objects
@@ -190,20 +189,9 @@ position,map});
     });
   }
 
-<<<<<<< HEAD
- 
-=======
-  //initializes the map
-  initMap() {
-    this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 7,
-      center: {lat: 41.85, lng: -87.65}
-    });
-  }
-
 
   //logs user out
->>>>>>> 8f1a6e703e66cda3db26f8c69df7248230d643d6
+
   logout() {
     this.events.publish('user:logout', true, Date.now());
   }
