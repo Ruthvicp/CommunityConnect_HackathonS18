@@ -48,7 +48,18 @@
       </div>
     </div>
     <div class="spacer">
-
+      <h4>Post:</h4>
+      <ion-item>
+        <ion-label>Post Type:</ion-label>
+        <ion-select [(ngModel)]="postType">
+          <ion-option value="mess">Message</ion-option>
+          <ion-option value="requ">Request</ion-option>
+          <ion-option value="alar">Alarm</ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="postMess()">Post Message</button>
+      </div>
     </div>
     <div class="inputButton">
       <!--<input type="button" id="btn_login" value="Login" (click)="loginClick()"/>-->
