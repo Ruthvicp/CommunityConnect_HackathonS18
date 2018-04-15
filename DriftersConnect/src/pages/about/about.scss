@@ -19,6 +19,10 @@ page-about {
     width: auto;
   }
 
+  .listItem {
+    margin: 10px 20px;
+  }
+
   .inputData, .inputLabel {
     padding: 2px;
     margin: 2px auto;
@@ -32,5 +36,10 @@ page-about {
 
   .text-input-md {
     margin: 5px 5px;
+  }
+
+  .logoutButton {
+    float:right;
+    margin: 5px 10px;
   }
 }
