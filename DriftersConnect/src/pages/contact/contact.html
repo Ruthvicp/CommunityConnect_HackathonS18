@@ -3,6 +3,11 @@
     <ion-title>
       Community Chat
     </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="addRoom()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -15,4 +20,11 @@
       </div>
     </div>
   </div>
+    
+    <ion-list>
+    <ion-item *ngFor="let room of rooms">
+      {{room.roomname}}
+      <ion-icon name="chatboxes" item-end (click)="joinRoom(room.key)"></ion-icon>
+    </ion-item>
+  </ion-list>
 </ion-content>

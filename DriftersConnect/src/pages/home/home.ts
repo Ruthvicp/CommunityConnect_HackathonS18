@@ -3,6 +3,7 @@ import {AlertController, Events, NavController, Platform} from 'ionic-angular';
 import {Storage} from "@ionic/storage";
 import firebase from 'firebase';
 import {Observable} from "rxjs/Observable";
+import { ContactPage } from  '../contact/contact';
 
 declare var google: any;
 
@@ -18,6 +19,8 @@ export class HomePage {
   pMess: "";
   usersList: any[] = [];
   userRef = firebase.database().ref("Users/").orderByKey();
+
+  data = { nickname:"" };
 
   constructor(private alertCtrl:AlertController, private ionStorage:Storage, public navCtrl: NavController, public  events:Events, public platform:Platform){
     this.navCtrl = navCtrl;
@@ -76,4 +79,11 @@ export class HomePage {
   logout() {
     this.events.publish('user:logout', true, Date.now());
   }
+  
+  enterNickname() {
+  this.navCtrl.setRoot(ContactPage, {
+    nickname: this.data.nickname
+  });
+}
+
 }
