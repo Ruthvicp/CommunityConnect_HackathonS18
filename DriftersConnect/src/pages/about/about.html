@@ -1,35 +1,64 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Maintenance and Recommendations
-    </ion-title>
-  </ion-navbar>
+ <ion-navbar>
+   <ion-title>
+     Maintenance and Recommendations
+   </ion-title>
+ </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div class="aboutCenter">
-    <h3>Maintenance and Recommendations</h3>
-    <div class="spacer">
-      <div class="logoutButton">
-        <button ion-button color="tertiary" (click)="logout()">Logout</button>
-      </div>
-    </div>
-    <div class="spacer">
-      <div class="listItem">
-        <h4>Maintenance Records:</h4>
-        <ion-item *ngFor="let maintItem of mainReports">
-          <!--{{newsItem.result.name}}-->
-        </ion-item>
-      </div>
-    </div>
-    <div class="spacer">
-      <div class="listItem">
-        <h4>Recommendations:</h4>
-        <ion-item *ngFor="let recommendItem of recommendations">
-          <!--{{newsItem.result.name}}-->
-        </ion-item>
-      </div>
-    </div>
-  </div>
+ <div class="aboutCenter">
+   <h3>Maintenance and Recommendations</h3>
+     <ul>
+     <li class="li1">Electrician : +1 816-111-2222 </li><li class="li2">Plumber : +1 816-111-3333</li> <li>Pest Control : +1 816-111-1234</li><li>Carpet cleaning : +1 816-111-4444</li><li>Movers and Packers : +1 816-111-5555</li><li>Car cleaning : +1 816-111-6666</li></ul>
+   <div class="spacer">
+     <div class="listItem">
+       <ion-item *ngFor="let maintItem of mainReports">
+         <!--{{newsItem.result.name}}-->
+       </ion-item>
+     </div>
+   </div>
+   <div class="spacer">
+     <div class="listItem">
+       <h3>Details:</h3>
+       <ion-item *ngFor="let recommendItem of recommendations">
+         <!--{{newsItem.result.name}}-->
+       </ion-item>
+     </div>
+   </div>
+ </div>
+   <form name="htmlform" method="post" action="html_form_send.php">
+<table width="450px">
+
+<tr>
+<td valign="top">
+ <label for="email">Address *</label>
+</td>
+<td valign="top">
+ <input  type="text" name="email" maxlength="80" size="30">
+</td>
+
+</tr>
+<tr>
+<td valign="top">
+ <label for="comments">Problem/Complaint *</label>
+</td>
+<td valign="top">
+ <textarea  name="comments" maxlength="1000" cols="32" rows="6"></textarea>
+</td>
+
+</tr>
+<tr>
+<td colspan="2" style="text-align:center">
+ <input type="submit" value="Submit">
+</td>
+</tr>
+</table>
+</form>
+<div class="spacer">
+     <div class="logoutButton">
+       <button ion-button color="tertiary" (click)="logout()">Logout</button>
+     </div>
+   </div>
 
 </ion-content>

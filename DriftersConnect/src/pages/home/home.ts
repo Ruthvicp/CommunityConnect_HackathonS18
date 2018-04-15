@@ -17,14 +17,36 @@ declare var google: any;
 })
 export class HomePage {
   @ViewChild('map') mapElement: ElementRef;
-  map: any;
+  
   user = "";
   postType: any ="";
   pMess: "";
   usersList: any[] = [];
   newsMessage: {};
   userRef = firebase.database().ref("Users/").orderByKey();
+  
+  ionViewDidLoad() {
+  this.showMap();
+  }
 
+showMap(){
+const location = new google.maps.LatLng(39.0335539,-94.5760259);
+const location1 = new google.maps.LatLng(38.9822282,-94.6707917);
+const location2 = new google.maps.LatLng(39.0228485,-94.7151865);
+const location3 = new google.maps.LatLng(38.9108408,-94.3821724);
+const options = {center:location,zoom:10,streetViewControl:false}
+const map = new google.maps.Map(this.mapElement.nativeElement, options); 
+this.addMarker(location,map);
+this.addMarker(location1,map);
+this.addMarker(location2,map);
+this.addMarker(location3,map);
+
+}
+
+addMarker(position,map){
+return new google.maps.Marker({
+position,map});
+}
 
   data = { nickname:"" };
 
@@ -48,9 +70,6 @@ export class HomePage {
     });
 
 
-    platform.ready().then(() => {
-      this.initMap();
-    });
   }
 
   alert(message: string){
@@ -123,13 +142,7 @@ export class HomePage {
     });
   }
 
-  initMap() {
-    this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 7,
-      center: {lat: 41.85, lng: -87.65}
-    });
-  }
-
+ 
   logout() {
     this.events.publish('user:logout', true, Date.now());
   }

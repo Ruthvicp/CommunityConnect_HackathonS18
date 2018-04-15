@@ -5,24 +5,20 @@
 </ion-header>
 
 <ion-content padding>
+           
+    <div #map id="map"></div>
   <div class="homeCenter">
     <h3>Home:</h3>
+      
     <div class="spacer">
       <div class="logoutButton">
         <button ion-button color="tertiary" (click)="logout()">Logout</button>
       </div>
     </div>
-    <div class="map" #map id="map"></div>
-    <div id="inMap">
-      <div>
-        <span>Enter your address here </span><input id = "numPoints" type="text" />
-        <button >Search Groups</button>
-      </div>
-      <div>
-        <strong>Results</strong>
-      </div>
+      
+          
       <div id="output"></div>
-    </div>
+
     <div class="spacer">
       <div class="listItem">
         <h4>Alarms:</h4>
@@ -32,6 +28,7 @@
           </ion-item>
         </div>
       </div>
+      
       <div class="inputButton">
         <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
       </div>
@@ -98,4 +95,7 @@
       </ion-item>
     </ion-list>
   </form>
+    
+ 
+
 </ion-content>
