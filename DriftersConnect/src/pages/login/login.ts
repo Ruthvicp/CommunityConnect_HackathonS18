@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Events } from 'ionic-angular';
-import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
+import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabaseModule} from "angularfire2/database";
-import {isSuccess} from "@angular/http/src/http_utils";
-import {HomePage} from "../home/home";
-import {Storage} from "@ionic/storage";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: 'page-login',
@@ -24,7 +22,6 @@ export class LoginPage {
 
   goToHome() {
     this.events.publish('user:login', true, Date.now());
-    //this.navCtrl.push(HomePage);
   }
 
   alert(message: string){
@@ -38,21 +35,19 @@ export class LoginPage {
   signinUser() {
     if (this.user.valueOf() != "" && this.pass.valueOf() != "") {
       this.fire.auth.signInWithEmailAndPassword(this.user.valueOf(), this.pass.valueOf()).then(data => {
-        console.log("got data from Firebase ", data);
-        //this.alert("You are logged in !");
+        //console.log("got data from Firebase ", data);
         this.ionStorage.set('userName',this.user.valueOf());
-        this.navCtrl.push(HomePage);
-
+        this.goToHome();
       }).catch(error => {
         console.log("error in registeration : ", error);
         this.alert(error.message);
       });
 
-      console.log("will register using credentials : username is " + this.user + " and psw is " + this.pass)
+      console.log("will register using credentials : username is " + this.user);
     }
     else
     {
-      this.alert("Please fill out all details!")
+      this.alert("Please fill out all details!");
     }
   }
 }
