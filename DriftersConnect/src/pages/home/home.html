@@ -12,7 +12,7 @@
         <button ion-button color="tertiary" (click)="logout()">Logout</button>
       </div>
     </div>
-    <div class="map" #map id="map"></div>
+  <!--  <div class="map" #map id="map"></div>
     <div id="inMap">
       <div>
         <span>Enter your address here </span><input id = "numPoints" type="text" />
@@ -21,8 +21,8 @@
       <div>
         <strong>Results</strong>
       </div>
-      <div id="output"></div>
-    </div>
+      <div id="output"></div>  
+    </div>-->
     <div class="spacer">
       <div class="listItem">
         <h4>Alarms:</h4>
@@ -83,9 +83,12 @@
       <!--<input type="button" id="btn_login" value="Login" (click)="loginClick()"/>-->
       <button ion-button color="secondary" (click)="displayUserDetails()">getUserDetails</button>
     </div>
-  </div>
-
-    <div #map id="map"></div>
+      <div class="mapcontainer" >
+ <div style="height:600px; width:600px; position: absolute"> 
+     <div #map id="map"></div>
+</div>
+          </div>
+    
     <!-- chat app -->
 
      <form (ngSubmit)="enterNickname()">
@@ -99,4 +102,6 @@
       </ion-item>
     </ion-list>
   </form>
+     </div>
+   
 </ion-content>
