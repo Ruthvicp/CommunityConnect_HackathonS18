@@ -6,12 +6,14 @@
 
 <ion-content padding>
   <div class="homeCenter">
-    <div class="mapContainer">
-      <div style="height: 300px; width: 75%; position: absolute;" >
-        <div class="map" #map id="map"></div>
+    <h3>Home:</h3>
+    <div class="spacer">
+      <div class="logoutButton">
+        <button ion-button color="tertiary" (click)="logout()">Logout</button>
       </div>
     </div>
-    <div id="inMap" class="inMap">
+    <div class="map" #map id="map"></div>
+    <div id="inMap">
       <div>
         <span>Enter your address here </span><input id = "numPoints" type="text" />
         <button >Search Groups</button>
@@ -21,16 +23,7 @@
       </div>
       <div id="output"></div>
     </div>
-    <h3>Home:</h3>
     <div class="spacer">
-      <div class="logoutButton">
-        <button ion-button color="tertiary" (click)="logout()">Logout</button>
-      </div>
-    </div>
-    <div class="spacer">
-      <div class="inputButton listButton">
-        <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
-      </div>
       <div class="listItem">
         <h4>Alarms:</h4>
         <div *ngIf="showA" >
@@ -39,11 +32,11 @@
           </ion-item>
         </div>
       </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
+      </div>
     </div>
     <div class="spacer">
-      <div class="inputButton listButton">
-        <button ion-button color="secondary" (click)="showN = !showN">Show/Hide News</button>
-      </div>
       <div class="listItem">
         <h4>News:</h4>
         <div *ngIf="showN">
@@ -52,11 +45,11 @@
           </ion-item>
         </div>
       </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showN = !showN">Show/Hide News</button>
+      </div>
     </div>
     <div class="spacer">
-      <div class="inputButton listButton">
-        <button ion-button color="secondary" (click)="showR = !showR">Show/Hide Requests</button>
-      </div>
       <div class="listItem">
         <h4>Requests:</h4>
         <div *ngIf="showR">
@@ -64,6 +57,9 @@
             <!--{{newsItem.result.name}}-->
           </ion-item>
         </div>
+      </div>
+      <div class="inputButton">
+        <button ion-button color="secondary" (click)="showR = !showR">Show/Hide Requests</button>
       </div>
     </div>
     <div class="spacer">
