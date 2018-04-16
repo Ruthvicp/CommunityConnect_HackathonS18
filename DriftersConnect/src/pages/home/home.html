@@ -5,11 +5,11 @@
 </ion-header>
 
 <ion-content padding>
-
-
   <div class="homeCenter">
     <h3>Home:</h3>
 
+  <div class="homeCenter">
+    <h3>Home:</h3>
     <div class="spacer">
       <div class="logoutButton">
         <button ion-button color="tertiary" (click)="logout()">Logout</button>
@@ -23,7 +23,7 @@
         <h4>Alarms:</h4>
         <div *ngIf="showA" >
           <ion-item *ngFor="let alarmItem of alarms">
-            <!--{{newsItem.result.name}}-->
+            {{alarmItem}}
           </ion-item>
         </div>
       </div>
@@ -37,7 +37,7 @@
         <h4>News:</h4>
         <div *ngIf="showN">
           <ion-item *ngFor="let newsItem of news">
-            <!--{{newsItem.result.name}}-->
+            {{newsItem}}
           </ion-item>
         </div>
       </div>
@@ -50,7 +50,7 @@
         <h4>Requests:</h4>
         <div *ngIf="showR">
           <ion-item *ngFor="let requestItem of requests">
-            <!--{{newsItem.result.name}}-->
+            {{requestItem}}
           </ion-item>
         </div>
       </div>
@@ -84,6 +84,13 @@
     <!-- disaply maps -->
     <div #map id="map"></div>
 
+
+      <div class="mapcontainer" >
+ <div style="height:600px; width:600px; position: absolute">
+     <div #map id="map"></div>
+</div>
+          </div>
+
     <!-- chat app -->
 
      <form (ngSubmit)="enterNickname()">
@@ -96,7 +103,6 @@
       </ion-item>
     </ion-list>
   </form>
-
-
+     </div>
 
 </ion-content>
