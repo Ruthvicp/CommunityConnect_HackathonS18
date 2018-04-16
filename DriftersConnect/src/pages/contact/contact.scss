@@ -1,4 +1,16 @@
 page-contact {
+    ion-content {
+    background: url(../assets/imgs/city.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    .item-md, .item-ios {
+      background: none;
+    }
+    }
+        .input-wrapper {
+        color: white
+    }
   .contactCenter {
     width: 90%;
     height: auto;
