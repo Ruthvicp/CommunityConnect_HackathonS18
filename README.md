@@ -10,11 +10,11 @@ Members:
 * Swati Singh
 
 ## Technology Used:
-Ionic 3
+Platform used - Ionic 3
 
-Angular 4
+Frontend - Angular 4
 
-Firebase
+Backend - Firebase
 
 ## Architecture:
 
@@ -59,5 +59,11 @@ src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Docum
 src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/addgroup.png"> <img width="200" height="300" 
 src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/created.png"> <img width="200" height="300" 
 src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/messages.png">
+
+<img align="left" width="200" height="300" 
+src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/recommendationPage.png">
+
+<img align="left" width="200" height="300" 
+src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/firebaseDatabase.png">
 
 
