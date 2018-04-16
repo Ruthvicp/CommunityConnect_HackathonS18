@@ -1,4 +1,13 @@
 page-login {
+      ion-content {
+    background: url(../assets/imgs/login.gif) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    .item-md, .item-ios {
+      background: none;
+    }
+  }
   .loginCenter {
     width: 20%;
     height: auto;
