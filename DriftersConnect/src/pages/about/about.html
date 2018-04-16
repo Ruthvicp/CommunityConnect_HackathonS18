@@ -7,8 +7,11 @@
 </ion-header>
 
 <ion-content padding>
+    
  <div class="aboutCenter">
-   <h2>Maintenance and Recommendations</h2>
+          
+   <h2>Contact information of Maintenance team</h2>
+
 
    <p style="float: left; font-size: 12pt; text-align: center; width: 30%; margin-right: 1%; margin-bottom: 0.5em;">
      <img align="middle" src="../../assets/imgs/electrician.jpg"  style="width: 30% "><br>Electrician : +1 816-111-2222
@@ -32,7 +35,8 @@
 
 <tr>
 <td valign="top">
- <label >Problem/Complaint *</label>
+ <label style="color: white;font-size: 20px" >Problem/Complaint *</label>
+    <br>
 </td>
 <td valign="top">
  <textarea  name="comments" maxlength="1000" cols="32" rows="6"></textarea>
@@ -40,16 +44,18 @@
 </tr>
 
 <tr>
+    
 <td colspan="2" style="text-align:center">
- <input type="submit" value="Submit">
+ <input type="submit" value="Submit" style="background-color:#40c574;color: white">
 </td>
+    
 </tr>
-
-  <div class="spacer">
+ <div class="spacer">
      <div class="logoutButton">
        <button ion-button color="tertiary" (click)="logout()">Logout</button>
      </div>
    </div>
  </div>
+ 
 
 </ion-content>
