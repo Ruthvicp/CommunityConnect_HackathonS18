@@ -17,10 +17,18 @@ page-home {
   .spacer {
     margin: 2px auto;
     width: auto;
+    min-height: 50px;
   }
 
   .listItem {
     margin: 10px 20px;
+    width: fit-content;
+    display: inline-block;
+  }
+
+  .listButton {
+    position: relative;
+    display: inline-block;
   }
 
   .inputData, .inputLabel {
@@ -53,6 +61,12 @@ page-home {
     margin: 5px;
     display: inline-block;
   }
+
+  .inputButton button {
+    padding: 2px;
+    width: 175px;
+  }
+
   .inputCenter {
     margin: 5px auto;
     width: fit-content;
@@ -68,33 +82,22 @@ page-home {
     margin: 5px 10px;
   }
 
-  /*#right-panel {
-            font-family: 'Roboto','sans-serif';
-            line-height: 30px;
-            padding-left: 10px;
-        } */
-
-  /* #right-panel select, #right-panel input {
-       font-size: 15px;
-   }
-
-   #right-panel select {
-       width: 100%;
-   }
-
-   #right-panel i {
-       font-size: 12px;
-   } */
+  .mapContainer {
+    margin: 10px auto;
+    height: 300px;
+    width: 90%;
+  }
 
   .map {
     height: 100%;
     width: 100%;
   }
-  /* #right-panel {
-       float: right;
-       width: 48%;
-       padding-left: 2%;
-   } */
+
+  .inMap {
+    margin: 5px auto;
+    width: fit-content;
+  }
+
   #output {
     font-size: 11px;
   }
