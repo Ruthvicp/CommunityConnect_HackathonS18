@@ -17,25 +17,56 @@ declare var google: any;
 })
 export class HomePage {
   @ViewChild('map') mapElement: ElementRef;
-  map: any;
+  
   user = "";
   postType: any ="";
   pMess: "";
   usersList: any[] = [];
   newsMessage: {};
+  alarms: any[] = [];
+  requests: any[] = [];
+  news: any[] = [];
   userRef = firebase.database().ref("Users/").orderByKey();
+  
+  ionViewDidLoad() {
+  this.showMap();
+  }
+
+showMap(){
+const location = new google.maps.LatLng(39.0335539,-94.5760259);
+const location1 = new google.maps.LatLng(38.9822282,-94.6707917);
+const location2 = new google.maps.LatLng(39.0228485,-94.7151865);
+const location3 = new google.maps.LatLng(38.9108408,-94.3821724);
+const options = {center:location,zoom:10,streetViewControl:false}
+const map = new google.maps.Map(this.mapElement.nativeElement, options); 
+this.addMarker(location,map);
+this.addMarker(location1,map);
+this.addMarker(location2,map);
+this.addMarker(location3,map);
+
+}
+
+addMarker(position,map){
+return new google.maps.Marker({
+position,map});
+}
+
+  alarmRef = firebase.database().ref("Alarms/").orderByKey();
+  reqRef = firebase.database().ref("userRequests/").orderByKey();
+  newsRef = firebase.database().ref("News/").orderByKey();
 
 
   data = { nickname:"" };
-
-
+  //constructor to initialize the objects
   constructor(private alertCtrl:AlertController, private ionStorage:Storage, public navCtrl: NavController,
               public  events:Events, public platform:Platform, public fireDatabase: AngularFireDatabase){
 
     this.navCtrl = navCtrl;
     this.events = events;
     console.log(this.usersList);
-
+    this.setAlarmDisplay();
+    this.setUserNewsDisplay();
+    this.setUserRequestsDisplay();
     ionStorage.get("userName").then((val) => {
       this.user = val;
       //this.usersList = [];
@@ -48,9 +79,6 @@ export class HomePage {
     });
 
 
-    platform.ready().then(() => {
-      this.initMap();
-    });
   }
 
   alert(message: string){
@@ -61,11 +89,12 @@ export class HomePage {
     }).present();
   }
 
+  //func to post the user typed messages
   postMess() {
     if (this.postType != null) {
       this.newsMessage = {
         user: this.user,
-        newsUpdate: this.pMess
+        update: this.pMess
       };
       /*
       if (this.postType == "mess") {
@@ -91,18 +120,21 @@ export class HomePage {
           this.fireDatabase.list('News').push(this.newsMessage);
           console.log("Saved your News/Updates to Firebase!");
           alert(this.postType);
+          this.setUserNewsDisplay();
           break;
         }
         case "requ":{
           this.fireDatabase.list('userRequests').push(this.newsMessage);
           console.log("Saved user Requests to Firebase!");
           alert(this.postType);
+          this.setUserRequestsDisplay();
           break;
         }
         case "alar":{
           this.fireDatabase.list('Alarms').push(this.newsMessage);
           console.log("Saved Alarms to Firebase!");
           alert(this.postType);
+          this.setAlarmDisplay();
           break;
         }
         default:{
@@ -115,7 +147,41 @@ export class HomePage {
     }
   }
 
-  displayUserDetails(){
+  //Displays the user entered news updates
+  setUserNewsDisplay(){
+    this.news = [];
+    console.log("Inside Setting News update");
+    var that = this;
+    this.newsRef.on('child_added', function(data) {
+      that.news.push(data.val().update);
+      console.log("Setting news Updates to - "+data.val().update);
+    });
+  }
+
+  //Displays the user entered requests
+  setUserRequestsDisplay(){
+    this.requests = [];
+    console.log("Inside Setting user requests");
+    var that = this;
+    this.reqRef.on('child_added', function(data) {
+      that.requests.push(data.val().update);
+      console.log("Setting user requests to - "+data.val().update);
+    });
+  }
+
+  //Displays the user entered Alarms
+  setAlarmDisplay(){
+    this.alarms = [];
+    console.log("Inside Setting Alarms");
+    var that = this;
+    this.alarmRef.on('child_added', function(data) {
+      that.alarms.push(data.val().update);
+      console.log("Setting Alarms to - "+data.val().update);
+    });
+  }
+
+  //Displays the user details
+   displayUserDetails(){
     var that = this;
     //console.log("Inside displayUserDetails func of home.ts");
     this.userRef.on('child_added', function(data) {
@@ -123,17 +189,13 @@ export class HomePage {
     });
   }
 
-  initMap() {
-    this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 7,
-      center: {lat: 41.85, lng: -87.65}
-    });
-  }
+
+  //logs user out
 
   logout() {
     this.events.publish('user:logout', true, Date.now());
   }
-  
+
   enterNickname() {
   this.navCtrl.setRoot(ContactPage, {
     nickname: this.data.nickname
