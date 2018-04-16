@@ -28,7 +28,7 @@
         <h4>Alarms:</h4>
         <div *ngIf="showA" >
           <ion-item *ngFor="let alarmItem of alarms">
-            <!--{{newsItem.result.name}}-->
+            {{alarmItem}}
           </ion-item>
         </div>
       </div>
@@ -41,7 +41,7 @@
         <h4>News:</h4>
         <div *ngIf="showN">
           <ion-item *ngFor="let newsItem of news">
-            <!--{{newsItem.result.name}}-->
+            {{newsItem}}
           </ion-item>
         </div>
       </div>
@@ -54,7 +54,7 @@
         <h4>Requests:</h4>
         <div *ngIf="showR">
           <ion-item *ngFor="let requestItem of requests">
-            <!--{{newsItem.result.name}}-->
+            {{requestItem}}
           </ion-item>
         </div>
       </div>
@@ -85,6 +85,7 @@
     </div>
   </div>
 
+    <div #map id="map"></div>
     <!-- chat app -->
 
      <form (ngSubmit)="enterNickname()">
