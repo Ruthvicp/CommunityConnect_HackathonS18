@@ -15,6 +15,10 @@ Angular 4
 
 Firebase
 
+## Architecture:
+
+![alt txt](https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/architecture.JPG)
+
 ## Features:
 The app allows user to share the latest news related to community or ask questions to community mates.
 
