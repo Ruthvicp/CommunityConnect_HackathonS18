@@ -9,13 +9,15 @@ page-login {
     }
   }
   .loginCenter {
-    width: 20%;
-    height: auto;
+    width: 35%;
+    height: 60%;
     padding: 2px 2px 25px 2px;
     min-width: 200px;
-    margin: auto;
+    margin-top: 100px;
+      margin-left: 500px;
     border-radius: 20px;
-    background: #aeffff;
+      opacity: 0.7;
+    background: #101010;
   }
 
   h3 {
@@ -27,26 +29,31 @@ page-login {
         font-size: 70px;
         color: white;
         text-shadow: 2px 2px #bfbfbf;
+        font-weight: 400;
     }
 
   .spacer {
     margin: 2px auto;
-    width: auto;
+    width: 80%;
   }
 
   .inputData, .inputLabel {
     padding: 2px;
-    margin: 2px auto;
-    width: 150px;
+    margin: 5px 20px;
+    width: 400px;
     height: auto;
+      color: white;
+      font-weight: 400;
+      font-size: 25px;
   }
 
   .inputData {
-    border-bottom: #222222 solid 1px;
+    border-bottom: #FFFFFF solid 2px;
+      font-weight: 400;
   }
 
   .text-input-md {
-    margin: 5px 5px;
+    margin: 5px 20px;
   }
 
   .checklabel {
@@ -62,6 +69,8 @@ page-login {
     padding: 2px;
     width: 100px;
     height: auto;
+      color: #40c574;
+    opacity: 5;
     margin: 5px auto;
   }
 }
