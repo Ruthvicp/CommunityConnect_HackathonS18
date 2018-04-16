@@ -1,12 +1,25 @@
 page-register {
+    ion-content {
+    background: url(../assets/imgs/login.gif) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    .item-md, .item-ios {
+      background: none;
+    }
+  }
+
+        
   .registerCenter {
-    width: 20%;
-    height: auto;
+    width: 35%;
+    height: 140%;
     padding: 2px 2px 25px 2px;
     min-width: 200px;
-    margin: auto;
+    margin-top: 100px;
+      margin-left: 500px;
     border-radius: 20px;
-    background: #aeffff;
+      opacity: 0.9;
+    background: #101010;
   }
 
   h3 {
