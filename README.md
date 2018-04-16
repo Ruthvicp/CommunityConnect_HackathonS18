@@ -36,11 +36,27 @@ The map shows the nearest community groups based on the location
 
 The app can also manage the recording of maintenance complaints.
 
-## Youtube Videos :
+## Youtube Videos:
 
 Web Demo
 https://youtu.be/l0xbGhh2i40
 
 Android Demo
 https://youtu.be/j2yyp7FmVG0
+
+## Screenshots:
+
+<img align="left" width="200" height="300" 
+src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/login_a.png"> <img width="200" height="300" src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/reg_a.png">  <img width="200" height="300" src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/home1.png">
+
+
+<img align="left" width="200" height="300" 
+src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/home2.png"> <img width="200" height="300" 
+src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/home3.png">  <img width="200" height="300" src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/comm_groups.png">
+
+<img align="left" width="200" height="300" 
+src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/addgroup.png"> <img width="200" height="300" 
+src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/created.png"> <img width="200" height="300" 
+src="https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/messages.png">
+
 
