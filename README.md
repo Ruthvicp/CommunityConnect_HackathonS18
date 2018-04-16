@@ -1,9 +1,9 @@
 
 # CommunityConnect_HackathonS18
-A mobile application to share the latest news related to your community or ask questions to  community mates and also check maintenance records. This is a hybrid application, which runs on web/android/ios platforms.
+A mobile application to share the latest news related to your community or ask questions to  community mates and also check maintenance records. This is a hybrid application, which runs on web/android/ios platforms
 
-##Team Name: Eleven's Drifters 
-Members - 
+## Team Name: Eleven's Drifters
+Members:
 * Sneha Mishra     
 * Cameron L'Ecuyer
 * Ruthvic Punyamurtula
