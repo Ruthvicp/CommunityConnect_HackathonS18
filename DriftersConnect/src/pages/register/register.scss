@@ -1,12 +1,25 @@
 page-register {
+    ion-content {
+    background: url(../assets/imgs/login.gif) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    .item-md, .item-ios {
+      background: none;
+    }
+  }
+
+        
   .registerCenter {
-    width: 20%;
-    height: auto;
+    width: 35%;
+    height: 190%;
     padding: 2px 2px 25px 2px;
     min-width: 200px;
-    margin: auto;
+    margin-top: 100px;
+      margin-left: 500px;
     border-radius: 20px;
-    background: #aeffff;
+      opacity: 0.9;
+    background: #101010;
   }
 
   h3 {
@@ -16,14 +29,18 @@ page-register {
 
   .spacer {
     margin: 2px auto;
-    width: auto;
+    width: 80%;
   }
 
   .inputData, .inputLabel {
-    padding: 2px;
-    margin: 2px auto;
-    width: 150px;
+    
+      padding: 2px;
+    margin: 5px 20px;
+    width: 400px;
     height: auto;
+      font-weight: 400;
+      font-size: 25px;
+      border-radius: 20px;
   }
 
   .spacer p {
