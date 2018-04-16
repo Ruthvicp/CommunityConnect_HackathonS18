@@ -6,10 +6,7 @@
 
 <ion-content padding>
   <div class="homeCenter">
-    <h3>Home:</h3>
-
-  <div class="homeCenter">
-    <h3>Home:</h3>
+    
     <div class="spacer">
       <div class="logoutButton">
         <button ion-button color="tertiary" (click)="logout()">Logout</button>
@@ -21,7 +18,7 @@
     <div class="spacer">
       <div class="listItem">
         <h4>Alarms:</h4>
-        <div *ngIf="showA" >
+        <div class="abc" *ngIf="showA" style="color: white">
           <ion-item *ngFor="let alarmItem of alarms">
             {{alarmItem}}
           </ion-item>
@@ -54,9 +51,11 @@
           </ion-item>
         </div>
       </div>
+        
       <div class="inputButton">
         <button ion-button color="secondary" (click)="showR = !showR">Show/Hide Requests</button>
       </div>
+        
     </div>
     <div class="spacer">
       <ion-label class="inputLabel"><h4>Post:</h4></ion-label>
@@ -75,7 +74,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 
     <!-- disaply maps -->
       

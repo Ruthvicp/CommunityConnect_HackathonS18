@@ -10,41 +10,79 @@ page-home {
   }
     
   .homeCenter {
-    width: 90%;
-    height: auto;
+      width: 100%;
+    height: fill-content;
     padding: 2px 2px 25px 2px;
-    min-width: 300px;
-    margin: auto;
+    min-width: 100%;
+      min-height: 80%;
+    margin: 50x auto;
     border-radius: 20px;
+      opacity:0.9;
     background: #101010;
-      opacity: 0.8;
+          
   }
 
   h3 {
+        text-align:center;
     margin: 15px 5px 5px 20px;
     padding: 5px 0px 0px 0px;
+      color: white;
+      font-size: 30px;
+  }
+      h4 {
+        text-align:left;
+    margin: 15px 5px 5px 20px;
+    padding: 5px 0px 0px 0px;
+      color: white;
+      font-size: 30px;
   }
 
   .spacer {
     margin: 2px auto;
     width: auto;
   }
+    .input-wrapper {
+        color: white
+    }
 
   .listItem {
     margin: 10px 20px;
+      color: white;
   }
 
   .inputData, .inputLabel {
-    padding: 2px;
-    margin: 2px 20px;
-    width: 150px;
+      padding: 2px;
+    margin: 5px auto;
+    width: 80%;
     height: auto;
+      font-weight: 400;
+      font-size: 25px;
+      border-radius: 20px;
+      
   }
+        .inputLabel {
+        color: white;
+    }
+    
+     .inputData {
+    border-bottom: #FFFFFF solid 2px;
+      font-weight: 400;
+      background-color: white;
+      opacity: 1;
+           }
 
   .postData {
-    width: 90%;
-    margin: 2px auto;
+    width: 80%;
+    margin-left: 5px;
   }
+    
+    .ion-item {
+        color: white;
+    }
+    
+   .inputLabel {
+        color: white;
+    }
 
   .inputItem {
     padding: 2px;
@@ -57,11 +95,13 @@ page-home {
   .inputData {
     border-bottom: #222222 solid 1px;
   }
+    
 
   .inputButton {
     padding: 2px;
     height: auto;
     margin: 5px;
+      border-radius: 20px;
     display: inline-block;
   }
   .inputCenter {
@@ -84,6 +124,7 @@ page-home {
         height: 300px;
         margin: 10px auto;
     }
+
 
   /*#right-panel {
             font-family: 'Roboto','sans-serif';
@@ -114,5 +155,6 @@ page-home {
    } */
   #output {
     font-size: 11px;
+      color: white;
   }
 }
