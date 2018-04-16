@@ -1,7 +1,14 @@
+Team Name: Eleven's Drifters 
+Members - 
+* Sneha Mishra     
+* Cameron L'Ecuyer
+* Ruthvic Punyamurtula
+* Swati Singh
+
 # CommunityConnect_HackathonS18
 A mobile application to share the latest news related to your community or ask questions to  community mates and also check maintenance records. This is a hybrid application, which runs on web/android/ios platforms.
 
-## Technology:
+## Technology Used:
 Ionic 3
 
 Angular 4
