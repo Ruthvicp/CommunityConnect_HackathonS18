@@ -33,10 +33,14 @@ page-register {
   }
 
   .inputData, .inputLabel {
-    padding: 2px;
-    margin: 2px auto;
-    width: 150px;
+    
+      padding: 2px;
+    margin: 5px 20px;
+    width: 400px;
     height: auto;
+      font-weight: 400;
+      font-size: 25px;
+      border-radius: 20px;
   }
 
   .spacer p {
