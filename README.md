@@ -15,7 +15,7 @@ Angular 4
 
 Firebase
 
-## Architecure:
+## Architecture:
 
 ![alt txt](https://github.com/Ruthvicp/CommunityConnect_HackathonS18/blob/master/Documentation/architecture.JPG)
 
