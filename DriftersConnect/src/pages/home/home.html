@@ -5,17 +5,17 @@
 </ion-header>
 
 <ion-content padding>
-           
-    
+
+
   <div class="homeCenter">
     <h3>Home:</h3>
-      
+
     <div class="spacer">
       <div class="logoutButton">
         <button ion-button color="tertiary" (click)="logout()">Logout</button>
       </div>
     </div>
-              
+
       <div id="output"></div>
 
     <div class="spacer">
@@ -27,7 +27,7 @@
           </ion-item>
         </div>
       </div>
-      
+
       <div class="inputButton">
         <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
       </div>
@@ -80,7 +80,7 @@
       <button ion-button color="secondary" (click)="displayUserDetails()">getUserDetails</button>
     </div>
   </div>
-    
+
     <!-- disaply maps -->
     <div #map id="map"></div>
 
@@ -89,15 +89,14 @@
      <form (ngSubmit)="enterNickname()">
     <ion-list>
       <ion-item>
-        <ion-label floating>Enter your Nickname</ion-label>
         <ion-input type="text" [(ngModel)]="data.nickname" name="nickname" required=""></ion-input>
       </ion-item>
       <ion-item>
-        <button ion-button full round color="secondary" type="submit">Enter</button>
+        <button ion-button full round color="secondary" type="submit">Enter the Community Chat</button>
       </ion-item>
     </ion-list>
   </form>
-    
- 
+
+
 
 </ion-content>

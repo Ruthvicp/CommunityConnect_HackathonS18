@@ -17,7 +17,7 @@ declare var google: any;
 })
 export class HomePage {
   @ViewChild('map') mapElement: ElementRef;
-  
+
   user = "";
   postType: any ="";
   pMess: "";
@@ -27,7 +27,7 @@ export class HomePage {
   requests: any[] = [];
   news: any[] = [];
   userRef = firebase.database().ref("Users/").orderByKey();
-  
+
   ionViewDidLoad() {
   this.showMap();
   }
@@ -38,7 +38,7 @@ const location1 = new google.maps.LatLng(38.9822282,-94.6707917);
 const location2 = new google.maps.LatLng(39.0228485,-94.7151865);
 const location3 = new google.maps.LatLng(38.9108408,-94.3821724);
 const options = {center:location,zoom:10,streetViewControl:false}
-const map = new google.maps.Map(this.mapElement.nativeElement, options); 
+const map = new google.maps.Map(this.mapElement.nativeElement, options);
 this.addMarker(location,map);
 this.addMarker(location1,map);
 this.addMarker(location2,map);
@@ -198,7 +198,8 @@ position,map});
 
   enterNickname() {
   this.navCtrl.setRoot(ContactPage, {
-    nickname: this.data.nickname
+    //nickname: this.data.nickname
+    nickname: this.user
   });
 }
 
