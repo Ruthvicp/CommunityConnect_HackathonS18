@@ -6,16 +6,23 @@
 
 <ion-content padding>
   <div class="homeCenter">
-    
-    <div class="spacer">
-      <div class="logoutButton">
+    <div class="conatiner">
+        <div class="spacer">
+        <h1 style="color: white;position: relative; top: 10px;">user name:
+            <button style="float: right; position: relative; top: 5px; right: 10px;" ion-button color="tertiary" (click)="logout()">Logout</button>
+            </h1>
+        </div>
+        
+   <!-- <div class="spacer">
+      <div class="logoutButton" style="align-self: flex-start">
         <button ion-button color="tertiary" (click)="logout()">Logout</button>
       </div>
+    </div>  -->
     </div>
-
+      <br> <br>
       <div id="output"></div>
-
-    <div class="spacer">
+<div class ="container">
+    <div class="spacer" >
       <div class="listItem">
         <h4>Alarms:</h4>
         <div class="abc" *ngIf="showA" style="color: white">
@@ -24,11 +31,11 @@
           </ion-item>
         </div>
       </div>
-
       <div class="inputButton">
         <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
       </div>
     </div>
+      
     <div class="spacer">
       <div class="listItem">
         <h4>News:</h4>
@@ -42,6 +49,7 @@
         <button ion-button color="secondary" (click)="showN = !showN">Show/Hide News</button>
       </div>
     </div>
+      
     <div class="spacer">
       <div class="listItem">
         <h4>Requests:</h4>
@@ -51,14 +59,15 @@
           </ion-item>
         </div>
       </div>
-        
       <div class="inputButton">
         <button ion-button color="secondary" (click)="showR = !showR">Show/Hide Requests</button>
       </div>
-        
     </div>
+    </div>
+      <br>
+      <div class="container">
     <div class="spacer">
-      <ion-label class="inputLabel"><h4>Post:</h4></ion-label>
+      <ion-label class="inputLabel" style="margin-left: 0px"><h4 style="float: left">Post:</h4></ion-label>
       <ion-input class="inputData postData" type="text" placeholder="Post Message" [(ngModel)]="pMess"></ion-input>
       <div class="inputCenter">
         <ion-item class="inputItem">
@@ -73,6 +82,7 @@
           <button ion-button color="secondary" (click)="postMess()">Post Message</button>
         </div>
       </div>
+          </div>
     </div>
 
 

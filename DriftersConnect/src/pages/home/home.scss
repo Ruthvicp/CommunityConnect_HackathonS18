@@ -21,6 +21,17 @@ page-home {
     background: #101010;
           
   }
+    
+    .container {
+  display: flex;
+        border-radius: 20px;
+        border-style: groove;
+        border-color: white;
+        border-width: thin;
+}
+.container > div {
+  flex: 1; /*grow*/
+}
 
   h3 {
         text-align:center;
