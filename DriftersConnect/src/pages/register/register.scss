@@ -8,7 +8,7 @@ page-register {
       background: none;
     }
     }
-        
+
   .registerCenter {
    width: 90%;
     height: fill-content;
@@ -20,6 +20,10 @@ page-register {
       opacity:0.9;
     background: #101010;
     }
+
+  ion-grid{
+    color: white;
+  }
 
   h3 {
       text-align:center;
@@ -45,9 +49,9 @@ page-register {
       font-weight: 400;
       font-size: 25px;
       border-radius: 20px;
-      
+
     }
-    
+
         .inputLabel {
         color: white;
     }
@@ -79,7 +83,7 @@ page-register {
     opacity: 5;
     margin: 5px auto;
   }
-    
+
      .inputButton button{
     padding: 2px;
     width: 100%;

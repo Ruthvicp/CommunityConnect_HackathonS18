@@ -10,8 +10,8 @@
   <div class="registerCenter">
     <h3>Create an Account:</h3>
     <div class="spacer">
-      <ion-label class="inputLabel" for="username">User Name: </ion-label>
-      <ion-input class="inputData" type="text" placeholder="Enter username" [(ngModel)]="username" required></ion-input>
+      <ion-label class="inputLabel" for="username">User Email: </ion-label>
+      <ion-input class="inputData" type="text" placeholder="Enter your email here!" [(ngModel)]="username" required></ion-input>
     </div>
     <div class="spacer">
       <ion-label class="inputLabel" for="fname">First Name: </ion-label>
@@ -37,11 +37,51 @@
       <ion-label class="inputLabel" for="pswConfirm">Confirm Password: </ion-label>
       <ion-input class="inputData" type="password" placeholder="Confirm Password" [(ngModel)]="pswConfirm" required></ion-input>
     </div>
-      
+    <div class="spacer">
+      <div class="checklabel">
+        <ion-label class="inputLabel" for="remember"><ion-checkbox name="remember"></ion-checkbox>Click to Register as an Admin</ion-label>
+      </div>
+    </div>
       <div class="spacer">
-
     <div class="inputButton">
       <button ion-button color="secondary" (click)="registerUser()">Sign Up</button>
-          </div></div>
+    </div>
+      </div>
   </div>
 </ion-content>
+
+
+<ion-grid>
+  <ion-row>
+    <ion-col width-50>
+      <ion-item>
+        <ion-label class="inputLabel" for="fname">First Name: </ion-label>
+        <ion-input class="inputData" type="text" placeholder="Enter first name" [(ngModel)]="fname" required></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col width-50>
+      <ion-item>
+        <ion-label class="inputLabel" for="lname">Last Name: </ion-label>
+        <ion-input class="inputData" type="text" placeholder="Enter last name" [(ngModel)]="lname" required></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<ion-grid>
+  <ion-row>
+    <ion-col width-50>
+      <ion-item>
+        <ion-label class="inputLabel" for="psw">Password: </ion-label>
+        <ion-input class="inputData" type="password" placeholder="Enter Password" [(ngModel)]="psw" required></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col width-50>
+      <ion-item>
+        <ion-label class="inputLabel" for="pswConfirm">Confirm Password: </ion-label>
+        <ion-input class="inputData" type="password" placeholder="Confirm Password" [(ngModel)]="pswConfirm" required></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
