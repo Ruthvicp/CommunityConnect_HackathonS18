@@ -22,7 +22,7 @@
       <br> <br>
       <div id="output"></div>
 <div class ="container">
-    <div class="spacer" >
+    <div class="spacer" style="width: 22%">
       <div class="listItem">
         <h4>Alarms:</h4>
         <div class="abc" *ngIf="showA" style="color: white">
@@ -32,11 +32,11 @@
         </div>
       </div>
       <div class="inputButton">
-        <button ion-button color="secondary" (click)="showA = !showA">Show/Hide Alarms</button>
+        <button ion-button color="secondary" (click)="showA = !showA">Show/Hide</button>
       </div>
     </div>
       
-    <div class="spacer">
+    <div class="spacer" style="width: 22%">
       <div class="listItem">
         <h4>News:</h4>
         <div *ngIf="showN">
@@ -46,11 +46,11 @@
         </div>
       </div>
       <div class="inputButton">
-        <button ion-button color="secondary" (click)="showN = !showN">Show/Hide News</button>
+        <button ion-button color="secondary" (click)="showN = !showN">Show/Hide</button>
       </div>
     </div>
       
-    <div class="spacer">
+    <div class="spacer" style="width: 22%">
       <div class="listItem">
         <h4>Requests:</h4>
         <div *ngIf="showR">
@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="inputButton">
-        <button ion-button color="secondary" (click)="showR = !showR">Show/Hide Requests</button>
+        <button ion-button color="secondary" (click)="showR = !showR">Show/Hide</button>
       </div>
     </div>
     </div>

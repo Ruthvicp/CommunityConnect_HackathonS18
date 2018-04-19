@@ -45,7 +45,7 @@ page-home {
     margin: 15px 5px 5px 20px;
     padding: 5px 0px 0px 0px;
       color: white;
-      font-size: 30px;
+      font-size: auto;
   }
 
   .spacer {
@@ -114,6 +114,7 @@ page-home {
     margin: 5px;
       border-radius: 20px;
     display: inline-block;
+      font-size: auto
   }
   .inputCenter {
     margin: 5px auto;
