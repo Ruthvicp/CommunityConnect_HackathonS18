@@ -8,11 +8,11 @@
   <div class="homeCenter">
     <div class="conatiner">
         <div class="spacer">
-        <h1 style="color: white;position: relative; top: 10px;">user name:
+        <h1 style="color: white;position: relative; top: 10px;">Dear {{user}}, welcome to Community Nexus!!
             <button style="float: right; position: relative; top: 5px; right: 10px;" ion-button color="tertiary" (click)="logout()">Logout</button>
             </h1>
         </div>
-        
+
    <!-- <div class="spacer">
       <div class="logoutButton" style="align-self: flex-start">
         <button ion-button color="tertiary" (click)="logout()">Logout</button>
@@ -37,7 +37,7 @@
     </div>
       
     <div class="spacer" style="width: 22%">
-      <div class="listItem">
+          <div class="listItem">
         <h4>News:</h4>
         <div *ngIf="showN">
           <ion-item *ngFor="let newsItem of news">
@@ -87,13 +87,13 @@
 
 
     <!-- disaply maps -->
-      
+
       <div class="mapcontainer" >
-    
+
 
      <div style="height:600px; width:100%; position: absolute">
 <div #map id="map"></div>
- 
+
 
  </div>
      </div>
