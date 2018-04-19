@@ -119,27 +119,27 @@ position,map});
         case "mess":{
           this.fireDatabase.list('News').push(this.newsMessage);
           console.log("Saved your News/Updates to Firebase!");
-          alert(this.postType);
+          //alert(this.postType);
           this.setUserNewsDisplay();
           break;
         }
         case "requ":{
           this.fireDatabase.list('userRequests').push(this.newsMessage);
           console.log("Saved user Requests to Firebase!");
-          alert(this.postType);
+         // alert(this.postType);
           this.setUserRequestsDisplay();
           break;
         }
         case "alar":{
           this.fireDatabase.list('Alarms').push(this.newsMessage);
           console.log("Saved Alarms to Firebase!");
-          alert(this.postType);
+          //alert(this.postType);
           this.setAlarmDisplay();
           break;
         }
         default:{
           console.log("Kindly select one of the types to post");
-          alert("Select one of the types to post");
+          //alert("Select one of the types to post");
           break;
         }
       }
